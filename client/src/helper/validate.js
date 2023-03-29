@@ -8,7 +8,6 @@ export async function resetPasswordValidate(values){
         error.exist = toast.error("Password not match!");
     }
 }
-
 export async function UsernameValidate(values){
     const error = usernameVarify({},values);
     if(values.username){

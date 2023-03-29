@@ -28,7 +28,6 @@ axios.defaults.baseURL = 'http://localhost:8500';
 //     },[query]);
 //     return [getData,setData];
 // }
-
 export default function useFetch(query){
     const [getData, setData] = useState({ isLoading : false, apiData: undefined, status: null, serverError: null })
     useEffect(() => {

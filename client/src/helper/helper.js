@@ -1,9 +1,10 @@
 import axios from 'axios';
-import jwt_decode from 'jwt-decode';
+import jwt_decode from 'jwt-decode'
 // import 'dotenv/config';
 
 // axios.defaults.baseURL=process.env.REACT_APP_SERVER_DOMAIN;
 axios.defaults.baseURL='http://localhost:8500';
+
 
 export async function getUsername(){
     const token = localStorage.getItem('token')
@@ -34,6 +35,7 @@ export async function getUser(username){
 
 export async function registerUser(userCredential){
     try {
+       
         const {data:{msg},status} = await axios.post(`/api/register`,userCredential);
         const {username,email} = userCredential;
         if(status===201){
@@ -83,6 +85,7 @@ export async function generateOTP(username){
         return Promise.reject({error});
     }
 }
+
 
 export async function verifyOTP(username,OTP){
     try {
